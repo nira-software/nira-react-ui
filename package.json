@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css}\"",
+    "format": "prettier --write \"ui/**/*.{js,jsx,ts,tsx,json,css}\"",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "check": "npm run format && npm run lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build:css": "postcss src/index.scss -o dist/index.css"
+    "build:css": "postcss ui/styles/globals.scss -o dist/index.css",
+    "build": "vite build"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
     "@types/react-dom": "18.2.18",
     "@typescript-eslint/eslint-plugin": "6.18.1",
     "@typescript-eslint/parser": "6.18.1",
+    "@vitejs/plugin-react": "4.2.1",
     "autoprefixer": "10.4.16",
     "eslint": "8.56.0",
     "eslint-config-prettier": "9.1.0",
@@ -47,13 +49,15 @@
     "eslint-plugin-react": "7.33.2",
     "eslint-plugin-storybook": "0.6.15",
     "postcss": "8.4.33",
+    "postcss-cli": "11.0.0",
     "prettier": "3.2.1",
     "sass": "1.69.7",
     "sass-loader": "13.3.3",
     "storybook": "7.6.8",
     "style-loader": "3.3.4",
     "tailwindcss": "3.4.1",
-    "typescript": "5.3.3"
+    "typescript": "5.3.3",
+    "vite": "4.5.1"
   },
   "dependencies": {
     "react": "18.2.0",
