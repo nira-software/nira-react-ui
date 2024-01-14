@@ -25,5 +25,11 @@ module.exports = {
       version: '>=18.0.0',
     },
   },
-  ignorePatterns: ['node_modules', 'build', 'dist', 'coverage'],
+  ignorePatterns: [
+    'node_modules',
+    'build',
+    'dist',
+    'coverage',
+    'storybook-static',
+  ],
 };

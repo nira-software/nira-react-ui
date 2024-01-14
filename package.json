@@ -1,8 +1,9 @@
 {
-  "name": "nira-react-ui",
-  "version": "1.0.0",
+  "name": "@nira-soft/nira-react-ui",
+  "version": "1.0.0-beta.0",
   "description": "Libreria de Componentes UI para react",
   "main": "index.js",
+  "private": false,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"ui/**/*.{js,jsx,ts,tsx,json,css}\"",
@@ -12,7 +13,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "build:css": "postcss ui/styles/globals.scss -o dist/index.css",
-    "build": "vite build"
+    "build": "npm run lint && npm run build-storybook && vite build",
+    "publish": "npm run build  && npm publish"
   },
   "repository": {
     "type": "git",
