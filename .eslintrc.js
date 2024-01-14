@@ -22,7 +22,8 @@ module.exports = {
   },
   settings: {
     react: {
-      version: 'detect',
+      version: '>=18.0.0',
     },
   },
+  ignorePatterns: ['node_modules', 'build', 'dist', 'coverage'],
 };

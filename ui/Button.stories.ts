@@ -1,50 +1,120 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import Button from './Button';
 
-import { Button } from './Button';
-
-// More on how to set up ui at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Example/Button',
   component: Button,
-  parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: 'centered',
-  },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
+  title: 'Nira/Componentes/Button',
   tags: ['autodocs'],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
+    children: { control: 'text' },
+    size: {
+      control: {
+        type: 'select',
+        options: ['xs', 'sm', 'md', 'lg'],
+      },
+    },
+    outline: {
+      control: {
+        type: 'boolean',
+        default: false,
+      },
+    },
+    className: {
+      control: 'text',
+    },
   },
 } satisfies Meta<typeof Button>;
 
 export default meta;
+
 type Story = StoryObj<typeof meta>;
 
-// More on writing ui with args: https://storybook.js.org/docs/writing-stories/args
+export const Default: Story = {
+  args: {
+    children: 'Click me',
+    size: 'md',
+    outline: false,
+    className: '',
+  },
+};
+
+export const Neutral: Story = {
+  args: {
+    children: 'Click me',
+    size: 'md',
+    outline: false,
+    className: 'btn-neutral',
+  },
+};
+
 export const Primary: Story = {
   args: {
-    primary: true,
-    label: 'Button',
+    children: 'Click me',
+    size: 'md',
+    outline: false,
+    className: 'btn-primary',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    label: 'Button',
+    children: 'Click me',
+    size: 'md',
+    outline: false,
+    className: 'btn-secondary',
   },
 };
 
-export const Large: Story = {
+export const Accent: Story = {
   args: {
-    size: 'large',
-    label: 'Button',
+    children: 'Click me',
+    size: 'md',
+    outline: false,
+    className: 'btn-accent',
   },
 };
 
-export const Small: Story = {
+export const Info: Story = {
   args: {
-    size: 'small',
-    label: 'Button',
+    children: 'Click me',
+    size: 'md',
+    outline: false,
+    className: 'btn-info',
+  },
+};
+
+export const Success: Story = {
+  args: {
+    children: 'Click me',
+    size: 'md',
+    outline: false,
+    className: 'btn-success',
+  },
+};
+
+export const Warning: Story = {
+  args: {
+    children: 'Click me',
+    size: 'md',
+    outline: false,
+    className: 'btn-warning',
+  },
+};
+
+export const Error: Story = {
+  args: {
+    children: 'Click me',
+    size: 'md',
+    outline: false,
+    className: 'btn-error',
+  },
+};
+
+export const Ghost: Story = {
+  args: {
+    children: 'Click me',
+    size: 'md',
+    outline: false,
+    className: 'btn-ghost',
   },
 };

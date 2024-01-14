@@ -1,5 +1,3 @@
-import { Button } from './Button';
-import { Header } from './Header';
-import { Page } from './Page';
+import Button from './Button';
 
-export { Button, Page, Header };
+export { Button };
